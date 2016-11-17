@@ -56,7 +56,7 @@ if (true === User::isConnected()) {
             'biographie' => (string)$_POST['biographie'],
             'influences' => (string)$_POST['influences'],
             'prochains_concerts' => (string)$_POST['prochains_concerts'],
-            'site_internet' => (string)$_POST['site_internet'],
+            'sites_internet' => (string)$_POST['sites_internet'],
             'newsletter' => (string)$_POST['newsletter'],
             'show_sexe' => (string)$_POST['show_sexe'],
             'show_date_naissance' => (string)$_POST['show_date_naissance'],
@@ -163,12 +163,14 @@ where u.id=" . (int)$userId);
     $date_naissance_annee = 1900;
     $years_min = 1900;
     $years_max = (int)date('Y');
+
     if (null !== $item['date_naissance']) {
-        list($date_naissance_jour, $date_naissance_mois, $date_naissance_annee) = explode('-', $item['date_naissance']);
+        list($date_naissance_annee, $date_naissance_mois, $date_naissance_jour) = explode('-', $item['date_naissance']);
         $date_naissance_jour = (int)$date_naissance_jour;
         $date_naissance_mois = (int)$date_naissance_mois;
         $date_naissance_annee = (int)$date_naissance_annee;
     }
+
     $months = [
         1 => 'janvier',
         2 => 'février',
@@ -391,11 +393,13 @@ where u.id=" . (int)$userId);
                         <textarea name="prochains_concerts"><?php echo $item['prochains_concerts']; ?></textarea>
                     </div>
 
-                    <div class="row">
-                        <span class="label">Site internet</span>
-                        <input type="text" name="site_internet"
-                               value="<?php echo htmlspecialchars($item['site_internet']); ?>">
+                   <div class="row">
+                        <span class="label">Sites internet<br>
+                            (un site par ligne, et ne pas ajouter de virgule entre deux lignes)
+                        </span>
+                        <textarea name="sites_internet"><?php echo $item['sites_internet']; ?></textarea>
                     </div>
+
 
                     <div class="submit">
                         <input id="input-submit" class="input-submit" type="submit" value="Renvoyer">
