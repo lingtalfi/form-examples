@@ -1,0 +1,69 @@
+/*------------------------------------
+- FORMULAIRE PROFIL
+------------------------------------*/
+.form-profil{
+    width: 80%;
+    /*background: #eee;*/
+}
+
+.form-profil .row{
+    margin-bottom: 20px;
+    display: flex;
+}
+
+.form-profil .label{
+    text-align: left;
+    width: 30%;
+}
+
+.form-profil input,
+.form-profil textarea,
+.form-profil select
+{
+    width: 40%;
+}
+
+.form-profil textarea{
+    height: 200px;
+}
+
+.form-profil .autowidth
+{
+    width: auto;
+}
+
+.form-profil hr
+{
+    border: 1px solid #eee;
+    width: 80%;
+    margin: 50px auto;
+}
+
+.form-profil .control-container
+{
+    flex: auto;
+}
+
+.form-profil .row_visible
+{
+    display: flex;
+    margin-top: 10px;
+}
+
+.form-profil .visible_label
+{
+    margin-right: 2%;
+}
+
+
+.dynamic-items li{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    background: #eee;
+    padding: 5px;
+}
+
+.dynamic-items li button{
+    margin-left: 100px;
+}
